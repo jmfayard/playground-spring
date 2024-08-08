@@ -1,0 +1,10 @@
+### Check whether server is up and running
+GET http://localhost:8080/api/1/health
+
+----
+
+### Spring actuator
+GET http://localhost:8080/actuator
+
+----
+
