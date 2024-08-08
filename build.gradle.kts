@@ -27,6 +27,7 @@ repositories {
 extra["netflixDgsVersion"] = "9.0.0"
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
@@ -39,7 +40,6 @@ dependencies {
 	runtimeOnly("com.ibm.db2:jcc")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.springframework:spring-webflux")
 	testImplementation("org.springframework.graphql:spring-graphql-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
@@ -50,14 +50,16 @@ dependencyManagement {
 	}
 }
 
+tasks.withType<Test> {
+	useJUnitPlatform()
+}
+
 /**
 tasks.generateJava {
 	schemaPaths.add("${projectDir}/src/main/resources/graphql-client")
 	packageName = "dev.jmfayard.spring.codegen"
 	generateClient = true
 }
-/**
+**/
 
-tasks.withType<Test> {
-	useJUnitPlatform()
-}
+
