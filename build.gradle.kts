@@ -35,7 +35,7 @@ dependencies {
 	// implementation("org.flywaydb:flyway-core")
 	// implementation("org.flywaydb:flyway-database-db2")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
+	// developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("com.ibm.db2:jcc")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
