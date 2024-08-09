@@ -14,7 +14,7 @@ Start the server
 
 ## Try the API
 
-`API.md` documents the API exposed by this server
+The file `API.http` documents the API exposed by this server
 
 The requests inside `API.md` can be directly run by IntelliJ Ultimate and [VS Code's REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
@@ -25,10 +25,17 @@ The requests inside `API.md` can be directly run by IntelliJ Ultimate and [VS Co
 - Spring Boot
 - Spring Web
 - Gradle Kotlin for the build system
-- Spring Rest Repositories
+- Spring JPA / Hibernate
 - Jackson to handle JSON
 - An in-memory H2 database
 - Junit5, mockito and RestAssured for the tests
+
+
+## Maybe/Later
+
+- Create a `kotlin` branch and convert all the code
+- Add GraphQL support  with [Netflix's DGS framework](https://netflix.github.io/dgs/)
+- Dockerize and host on https://fly.io/
 
 
 ## Should I use it on production?
