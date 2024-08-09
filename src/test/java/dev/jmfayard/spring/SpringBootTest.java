@@ -12,8 +12,4 @@ abstract class IntegrationTest {
 
     @Autowired
     TestRestTemplate restTemplate;
-
-    String endPoint(String relativePath) {
-        return "http://localhost:" + port + "/api/1/" + relativePath;
-    }
 }

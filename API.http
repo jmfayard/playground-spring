@@ -7,4 +7,39 @@ GET http://localhost:8080/api/1/health
 GET http://localhost:8080/actuator
 
 ----
+### Get policies
+GET http://localhost:8080/policies
+
+### Create policies
+POST http://localhost:8080/policies
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "patrick",
+  "status": "ACTIVE",
+  "startDate": "2024-01-01T01:02:00Z",
+  "endDate": "2024-12-01T01:02:00Z"
+} 
+
+### Update policy
+PUT  http://localhost:8080/policies/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "alice"
+}
+
+### Delete policy
+DELETE  http://localhost:8080/policies/1
+
+
+
+### GET user by name
+GET http://localhost:8080/policies/1
+Content-Type: application/json
+Accept: application/json
+
+
 
