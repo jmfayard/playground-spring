@@ -1,18 +1,19 @@
 package dev.jmfayard.spring;
 
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RequestMapping("/policies")
 @RestController
-@AllArgsConstructor
 public class InsurancePolicyController {
     private InsurancePolicyService service;
+
+    @Autowired
+    public InsurancePolicyController(InsurancePolicyService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public List<InsurancePolicy> fetchAllPolicies() {
@@ -20,8 +21,8 @@ public class InsurancePolicyController {
     }
 
     @PostMapping
-    public InsurancePolicy createPolicy() {
-        return service.createPolicy();
+    public InsurancePolicy createPolicy(@RequestBody InsurancePolicy policy) {
+        return service.createPolicy(policy);
     }
 
     @GetMapping("/{id}")
@@ -41,27 +42,3 @@ public class InsurancePolicyController {
 
 }
 
-@Service
-@AllArgsConstructor
-class InsurancePolicyService {
-
-    public List<InsurancePolicy> fetchAll() {
-        return new ArrayList<>();
-    }
-
-    public InsurancePolicy createPolicy() {
-        return new InsurancePolicy();
-    }
-
-    public Optional<InsurancePolicy> fetchById(long id) {
-        return Optional.empty();
-    }
-
-    public Optional<InsurancePolicy> updatePolicy(long id, InsurancePolicy body) {
-        return null;
-    }
-
-    public String deleteById(long id) {
-        return null;
-    }
-}

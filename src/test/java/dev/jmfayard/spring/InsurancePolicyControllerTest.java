@@ -34,7 +34,7 @@ class InsurancePolicyControllerTest extends IntegrationTest {
 
     @Test
     void should_create_policy() {
-        when(service.createPolicy()).thenReturn(InsurancePolicy("Habitation", InsurancePolicy.Status.ACTIVE));
+        when(service.createPolicy(any())).thenReturn(InsurancePolicy("Habitation", InsurancePolicy.Status.ACTIVE));
         RestAssured.given().port(port)
                 .header("Content-Type", "application/json")
                 .body(somePolicy())
