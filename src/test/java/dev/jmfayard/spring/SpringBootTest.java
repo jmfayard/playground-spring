@@ -10,7 +10,6 @@ abstract class IntegrationTest {
     @LocalServerPort
     int port;
 
-
     @Autowired
     TestRestTemplate restTemplate;
 
