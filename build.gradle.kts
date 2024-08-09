@@ -2,7 +2,6 @@ plugins {
 	java
 	id("org.springframework.boot") version "3.3.2"
 	id("io.spring.dependency-management") version "1.1.6"
-	// id("com.netflix.dgs.codegen") version "6.2.1"
 }
 
 group = "dev.jmfayard"
@@ -30,7 +29,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
-	implementation("org.springframework.boot:spring-boot-starter-graphql")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
@@ -38,30 +36,13 @@ dependencies {
 	runtimeOnly("com.ibm.db2:jcc")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.springframework.graphql:spring-graphql-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testImplementation("io.rest-assured:rest-assured")
 
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
-}
-
-dependencyManagement {
-	imports {
-		mavenBom("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:${property("netflixDgsVersion")}")
-	}
 }
 
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
-
-/**
-tasks.generateJava {
-	schemaPaths.add("${projectDir}/src/main/resources/graphql-client")
-	packageName = "dev.jmfayard.spring.codegen"
-	generateClient = true
-}
-**/
 
 

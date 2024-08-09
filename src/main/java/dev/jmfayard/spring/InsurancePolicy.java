@@ -25,6 +25,8 @@ public class InsurancePolicy {
     private Instant startDate;
     @NotNull
     private Instant endDate;
+
+    /** FIXME: those 2 fields are editable for now **/
     @NotNull
     private Instant createdAt;
     @NotNull
