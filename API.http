@@ -16,11 +16,14 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "patrick",
-  "status": "ACTIVE",
-  "startDate": "2024-01-01T01:02:00Z",
-  "endDate": "2024-12-01T01:02:00Z"
+  "name": "What is this ?",
+  "status": "INACTIVE",
+  "startDate": "2026-01-01T01:02:00Z",
+  "endDate": "2026-12-01T01:02:00Z"
 } 
+
+### GET a particular policy
+GET http://localhost:8080/policies/1
 
 ### Update policy
 PUT  http://localhost:8080/policies/1
@@ -28,7 +31,13 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "alice"
+  "id": 1,
+  "name": "This policy is obsolete",
+  "status": "INACTIVE",
+  "startDate": "2026-01-01T01:02:00Z",
+  "endDate": "2026-12-01T01:02:00Z",
+  "createdAt": "2028-08-09T15:14:31.548981Z",
+  "updatedAt": "2028-08-09T15:14:31.550346Z"
 }
 
 ### Delete policy
