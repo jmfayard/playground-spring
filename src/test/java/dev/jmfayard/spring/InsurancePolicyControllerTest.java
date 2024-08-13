@@ -42,7 +42,7 @@ class InsurancePolicyControllerTest extends IntegrationTest {
                 .post("/policies")
                 .then()
                 .assertThat()
-                .statusCode(200)
+                .statusCode(201)
                 .body("name", equalTo("Habitation"));
     }
 
@@ -80,7 +80,7 @@ class InsurancePolicyControllerTest extends IntegrationTest {
                 .delete("/policies/1")
                 .then()
                 .assertThat()
-                .statusCode(200)
+                .statusCode(202)
                 .body(equalTo(""));
     }
 

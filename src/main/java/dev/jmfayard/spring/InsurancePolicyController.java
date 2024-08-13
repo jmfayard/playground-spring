@@ -1,8 +1,11 @@
 package dev.jmfayard.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @RequestMapping("/policies")
@@ -20,8 +23,13 @@ public class InsurancePolicyController {
     }
 
     @PostMapping
-    public InsurancePolicy createPolicy(@RequestBody InsurancePolicy policy) {
-        return service.createPolicy(policy);
+    public ResponseEntity<InsurancePolicy> createPolicy(
+            HttpServletRequest request,
+            @RequestBody InsurancePolicy policy
+    ) throws URISyntaxException {
+        var createdPolicy = service.createPolicy(policy);
+        var uri = new URI(request.getRequestURI());
+        return ResponseEntity.created(uri).body(createdPolicy);
     }
 
     @GetMapping("/{id}")
@@ -35,9 +43,9 @@ public class InsurancePolicyController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteById(@PathVariable long id) {
-        return service.deleteById(id);
+    public ResponseEntity<String> deleteById(@PathVariable long id) {
+        var deleted = service.deleteById(id);
+        return ResponseEntity.accepted().body(deleted);
     }
-
 }
 
