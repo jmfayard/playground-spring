@@ -1,5 +1,8 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.api;
 
+import dev.jmfayard.spring.IntegrationTest;
+import dev.jmfayard.spring.domain.InsurancePolicy;
+import dev.jmfayard.spring.domain.InsurancePolicyService;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.mock.mockito.MockBean;

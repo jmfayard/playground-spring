@@ -1,4 +1,4 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.domain;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

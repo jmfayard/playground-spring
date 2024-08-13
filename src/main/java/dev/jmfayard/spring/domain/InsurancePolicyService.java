@@ -1,6 +1,6 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.domain;
 
-import org.springframework.data.domain.PageRequest;
+import dev.jmfayard.spring.data.InsurancePolicyRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 

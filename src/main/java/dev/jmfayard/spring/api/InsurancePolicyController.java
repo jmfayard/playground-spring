@@ -1,7 +1,10 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.api;
 
+import dev.jmfayard.spring.core.EntityMapper;
+import dev.jmfayard.spring.domain.InsurancePolicy;
+import dev.jmfayard.spring.domain.InsurancePolicyService;
+import dev.jmfayard.spring.domain.RessourceNotFound;
 import jakarta.servlet.http.HttpServletRequest;
-import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;

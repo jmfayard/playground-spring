@@ -1,5 +1,7 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.data;
 
+import dev.jmfayard.spring.IntegrationTest;
+import dev.jmfayard.spring.domain.InsurancePolicy;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.TransactionSystemException;

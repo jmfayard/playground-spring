@@ -6,10 +6,10 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-abstract class IntegrationTest {
+public abstract class IntegrationTest {
     @LocalServerPort
-    int port;
+    public int port;
 
     @Autowired
-    TestRestTemplate restTemplate;
+    public TestRestTemplate restTemplate;
 }

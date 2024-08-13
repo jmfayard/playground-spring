@@ -1,4 +1,6 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.api;
+
+import dev.jmfayard.spring.domain.InsurancePolicy;
 
 import java.time.Instant;
 

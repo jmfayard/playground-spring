@@ -1,4 +1,4 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

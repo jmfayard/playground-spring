@@ -1,5 +1,7 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.core;
 
+import dev.jmfayard.spring.domain.InsurancePolicy;
+import dev.jmfayard.spring.api.InsurancePolicyDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

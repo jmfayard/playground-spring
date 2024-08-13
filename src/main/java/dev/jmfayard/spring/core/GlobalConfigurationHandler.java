@@ -1,5 +1,6 @@
-package dev.jmfayard.spring;
+package dev.jmfayard.spring.core;
 
+import dev.jmfayard.spring.api.ErrorInfo;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
