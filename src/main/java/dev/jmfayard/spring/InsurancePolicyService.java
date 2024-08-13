@@ -38,6 +38,7 @@ public class InsurancePolicyService {
     }
 
     public String deleteById(long id) {
-        return null;
+        repository.deleteById(id);
+        return "deleted";
     }
 }
