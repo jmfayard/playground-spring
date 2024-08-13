@@ -2,6 +2,8 @@ package dev.jmfayard.spring;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.mapstruct.factory.Mappers;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +23,13 @@ public class InsurancePolicyController {
     }
 
     @GetMapping
-    public List<InsurancePolicyDTO> fetchAllPolicies() {
-        List<InsurancePolicy> result = service.fetchAll();
+    public List<InsurancePolicyDTO> fetchAllPolicies(
+            @RequestParam(value = "page", required = false) Integer page,
+            @RequestParam(value = "size", required = false) Integer size,
+            @RequestParam(value = "sort", required = false) String sort
+    ) {
+        var request = PageRequest.of(page == null ? 0 : page, size == null ? 20 : size, Sort.by(sort == null ? "id" : sort));
+        List<InsurancePolicy> result = service.fetchAll(request);
 
         return result.stream().map(mapper::policyToDTO).toList();
     }

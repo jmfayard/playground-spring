@@ -1,5 +1,7 @@
 package dev.jmfayard.spring;
 
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +17,8 @@ public class InsurancePolicyService {
         this.repository = repository;
     }
 
-    public List<InsurancePolicy> fetchAll() {
-        return newArrayList(repository.findAll());
+    public List<InsurancePolicy> fetchAll(Pageable pageable) {
+        return newArrayList(repository.findAll(pageable));
     }
 
     public InsurancePolicy createPolicy(InsurancePolicy policy) {

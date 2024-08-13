@@ -20,7 +20,7 @@ class InsurancePolicyControllerTest extends IntegrationTest {
     @Test
     void should_return_all_policies() {
         List<InsurancePolicy> policies = List.of(InsurancePolicy("Habitation", InsurancePolicy.Status.ACTIVE));
-        when(service.fetchAll()).thenReturn(policies);
+        when(service.fetchAll(any())).thenReturn(policies);
 
         RestAssured.given().port(port).when()
                 .get("/policies")
@@ -52,7 +52,7 @@ class InsurancePolicyControllerTest extends IntegrationTest {
         when(service.fetchById(1L)).thenReturn(Optional.of(somePolicy()));
 
         RestAssured.given().port(port).when()
-                .get("/policies/1")
+                .get("/policies/1?page=2&size=3")
                 .then()
                 .assertThat()
                 .statusCode(200)

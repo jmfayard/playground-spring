@@ -1,7 +1,7 @@
 package dev.jmfayard.spring;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-interface InsurancePolicyRepository extends CrudRepository<InsurancePolicy, Long> {
+interface InsurancePolicyRepository extends JpaRepository<InsurancePolicy, Long> {
 
 }
