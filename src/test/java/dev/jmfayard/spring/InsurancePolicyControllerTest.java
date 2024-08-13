@@ -64,7 +64,7 @@ class InsurancePolicyControllerTest extends IntegrationTest {
         when(service.fetchById(1L)).thenReturn(Optional.empty());
 
         RestAssured.given().port(port).when()
-                .get("/policies/{id}", 1)
+                .get("/policies/{policy_id}", 1)
                 .then()
                 .assertThat()
                 .statusCode(404);

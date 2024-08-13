@@ -29,7 +29,7 @@ public class InsurancePolicyService {
 
     public Optional<InsurancePolicy> updatePolicy(long id, InsurancePolicy newPolicy) {
         if (newPolicy.getId() != id)
-            throw new InvalidRequest("Mismatch between the id in the path and in the body while updating the insurance policy");
+            throw new InvalidRequest("Mismatch between the policy_id in the path and in the body while updating the insurance policy");
         if (!repository.existsById(id)) {
             return Optional.empty();
         } else {

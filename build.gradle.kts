@@ -39,6 +39,10 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testImplementation("io.rest-assured:rest-assured")
 
+	val mapstructVersion = "1.6.0"
+	implementation("org.mapstruct:mapstruct:${mapstructVersion}")
+	annotationProcessor("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+	testAnnotationProcessor("org.mapstruct:mapstruct-processor:${mapstructVersion}")
 }
 
 tasks.withType<Test> {

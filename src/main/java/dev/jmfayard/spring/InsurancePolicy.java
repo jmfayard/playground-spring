@@ -11,6 +11,7 @@ public class InsurancePolicy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(updatable = false)
     private long id;
 
 
@@ -70,6 +71,10 @@ public class InsurancePolicy {
      ***/
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
