@@ -1,6 +1,5 @@
 package dev.jmfayard.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import static org.hibernate.validator.internal.util.CollectionHelper.newArrayLis
 public class InsurancePolicyService {
     private final InsurancePolicyRepository repository;
 
-    @Autowired
     InsurancePolicyService(InsurancePolicyRepository repository) {
         this.repository = repository;
     }

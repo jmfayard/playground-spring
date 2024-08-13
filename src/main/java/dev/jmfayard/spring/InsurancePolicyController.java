@@ -10,7 +10,6 @@ import java.util.List;
 public class InsurancePolicyController {
     private InsurancePolicyService service;
 
-    @Autowired
     public InsurancePolicyController(InsurancePolicyService service) {
         this.service = service;
     }
