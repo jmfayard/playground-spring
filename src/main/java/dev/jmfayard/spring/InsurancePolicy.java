@@ -6,9 +6,6 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.Instant;
 
-/**
- * Hibernate: create table insurance_policy (status tinyint not null check (status between 0 and 1), created_at timestamp(6) with time zone not null, end_date timestamp(6) with time zone not null, id bigint not null, start_date timestamp(6) with time zone not null, updated_at timestamp(6) with time zone not null, name varchar(255) not null, primary key (id))
- */
 @Entity
 public class InsurancePolicy {
 
@@ -28,7 +25,9 @@ public class InsurancePolicy {
 
     /** FIXME: those 2 fields are editable for now **/
     @NotNull
+    @Column(updatable = false)
     private Instant createdAt;
+    @Column(updatable = false)
     @NotNull
     private Instant updatedAt;
 
